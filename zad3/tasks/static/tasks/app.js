@@ -2,11 +2,9 @@
 
 const API_URL = "/api/tasks/";
 
-// ---- state ---------------------------------------------------------------
 let tasks = [];
 let currentFilter = "all";
 
-// ---- DOM references ------------------------------------------------------
 const form = document.getElementById("task-form");
 const titleInput = document.getElementById("task-title");
 const listEl = document.getElementById("task-list");
@@ -16,7 +14,6 @@ const totalEl = document.getElementById("count-total");
 const doneEl = document.getElementById("count-done");
 const filterButtons = document.querySelectorAll(".filter");
 
-// ---- helpers -------------------------------------------------------------
 function getCookie(name) {
   const match = document.cookie
     .split("; ")
@@ -34,11 +31,6 @@ function clearMessage() {
   messageEl.hidden = true;
   titleInput.classList.remove("is-invalid");
 }
-
-/**
- * Wrapper around fetch(): adds JSON + CSRF headers and turns HTTP 4xx/5xx
- * responses into thrown errors carrying the message sent by the API.
- */
 async function apiRequest(url, options = {}) {
   const headers = { Accept: "application/json" };
   if (options.body !== undefined) {
@@ -69,7 +61,6 @@ async function apiRequest(url, options = {}) {
   return data;
 }
 
-// ---- rendering -----------------------------------------------------------
 function visibleTasks() {
   if (currentFilter === "active") return tasks.filter((t) => !t.completed);
   if (currentFilter === "completed") return tasks.filter((t) => t.completed);
@@ -133,7 +124,6 @@ function renderFilters() {
   });
 }
 
-// ---- API operations ------------------------------------------------------
 async function loadTasks() {
   try {
     tasks = await apiRequest(API_URL);
@@ -166,7 +156,7 @@ async function toggleTask(id) {
     clearMessage();
     await loadTasks();
   } catch (error) {
-    await loadTasks(); // the task may no longer exist; resync with the server
+    await loadTasks();
     showMessage(error.message);
   }
 }
@@ -182,7 +172,7 @@ async function deleteTask(id) {
   }
 }
 
-// ---- events --------------------------------------------------------------
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const title = titleInput.value.trim();

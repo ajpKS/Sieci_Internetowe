@@ -4,34 +4,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TaskBoard</title>
+  <title>Lista zadań</title>
   <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
 </head>
 <body>
   <main class="board">
-    <header class="board__head">
-      <h1>TaskBoard</h1>
+    <header class="header">
+      <h1>Lista zadań</h1>
       <p class="summary" aria-live="polite">
         Wszystkie: <strong id="count-total">0</strong>
-        <span class="summary__sep" aria-hidden="true"></span>
+        <span aria-hidden="true"> · </span>
         Ukończone: <strong id="count-done">0</strong>
       </p>
     </header>
 
-    <form id="task-form" class="add" novalidate>
-      <label for="task-title" class="visually-hidden">Treść nowego zadania</label>
-      <input id="task-title" name="title" type="text" maxlength="200"
-             placeholder="Co trzeba zrobić?" autocomplete="off">
-      <button type="submit">Dodaj zadanie</button>
+    <form id="task-form" class="add">
+      <label for="task-title" class="visually-hidden">
+        Nowe zadanie
+      </label>
+      <input
+        id="task-title"
+        name="title"
+        type="text"
+        maxlength="200"
+        placeholder="Co jest do zrobienia?"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Dodaj</button>
     </form>
 
     <p id="message" class="message" role="alert" hidden></p>
 
-    <div class="filters" role="group" aria-label="Filtr zadań">
-      <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Wszystkie</button>
-      <button type="button" class="filter" data-filter="active" aria-pressed="false">Aktywne</button>
-      <button type="button" class="filter" data-filter="completed" aria-pressed="false">Ukończone</button>
-    </div>
+    <nav class="filters" aria-label="Pokaż zadania">
+      <button type="button" class="filter is-active"
+              data-filter="all" aria-pressed="true">
+        Wszystkie
+      </button>
+      <button type="button" class="filter"
+              data-filter="active" aria-pressed="false">
+        Do zrobienia
+      </button>
+      <button type="button" class="filter"
+              data-filter="completed" aria-pressed="false">
+        Ukończone
+      </button>
+    </nav>
 
     <ul id="task-list" class="tasks"></ul>
     <p id="empty" class="empty" hidden></p>
