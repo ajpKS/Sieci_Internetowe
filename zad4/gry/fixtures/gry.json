@@ -1,0 +1,10 @@
+[
+ {"model":"gry.gra","pk":1,"fields":{"tytul":"The Witcher 3: Wild Hunt","opis":"Otwarty świat fantasy, w którym Geralt szuka przybranej córki.","gatunek":"rpg","data_premiery":"2015-05-19","ocena":10,"wieloosobowa":false,"cena":99.99}},
+ {"model":"gry.gra","pk":2,"fields":{"tytul":"Civilization VI","opis":"Turowa strategia o budowie cywilizacji od starożytności po przyszłość.","gatunek":"strategia","data_premiery":"2016-10-21","ocena":9,"wieloosobowa":true,"cena":149.00}},
+ {"model":"gry.gra","pk":3,"fields":{"tytul":"Celeste","opis":"Wymagająca platformówka o wspinaczce na górę i walce z własnymi lękami.","gatunek":"platformowa","data_premiery":"2018-01-25","ocena":9,"wieloosobowa":false,"cena":36.99}},
+ {"model":"gry.gra","pk":4,"fields":{"tytul":"Stardew Valley","opis":"Symulator farmy z elementami RPG, wędkowaniem i życiem w miasteczku.","gatunek":"symulacja","data_premiery":"2016-02-26","ocena":10,"wieloosobowa":true,"cena":49.99}},
+ {"model":"gry.gra","pk":5,"fields":{"tytul":"Hades","opis":"Roguelike akcji, w którym uciekasz z podziemi greckiego Hadesu.","gatunek":"zrecznosciowa","data_premiery":"2020-09-17","ocena":9,"wieloosobowa":false,"cena":85.00}},
+ {"model":"gry.gra","pk":6,"fields":{"tytul":"Portal 2","opis":"Przygodowa gra logiczna z portalami, z trybem kooperacji.","gatunek":"przygodowa","data_premiery":"2011-04-19","ocena":10,"wieloosobowa":true,"cena":40.00}},
+ {"model":"gry.gra","pk":7,"fields":{"tytul":"Age of Empires II: DE","opis":"Klasyczna strategia czasu rzeczywistego w średniowiecznych realiach.","gatunek":"strategia","data_premiery":"2019-11-14","ocena":9,"wieloosobowa":true,"cena":79.00}},
+ {"model":"gry.gra","pk":8,"fields":{"tytul":"Disco Elysium","opis":"Detektywistyczne RPG z rozbudowanymi dialogami i systemem myśli.","gatunek":"rpg","data_premiery":"2019-10-15","ocena":10,"wieloosobowa":false,"cena":109.00}}
+]

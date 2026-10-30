@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Katalog gier</title>
+    <link rel="stylesheet" href="{% static 'gry/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Katalog gier</h1>
+        <p>Lista gier komputerowych.</p>
+    </header>
+
+    <main>
+        <div class="panel">
+            <label for="filtr-gatunek">Gatunek:</label>
+            <select id="filtr-gatunek">
+                <option value="">wszystkie</option>
+                {% for kod, nazwa in gatunki %}
+                <option value="{{ kod }}">{{ nazwa }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="filtr-multi">Wieloosobowa:</label>
+            <select id="filtr-multi">
+                <option value="">dowolnie</option>
+                <option value="true">tak</option>
+                <option value="false">nie</option>
+            </select>
+
+            <button id="wczytaj" type="button">Wczytaj dane</button>
+        </div>
+
+        <p id="ladowanie" class="komunikat" hidden>Ładowanie...</p>
+        <p id="blad" class="komunikat blad" hidden></p>
+        <p id="brak" class="komunikat" hidden>Brak gier dla wybranych filtrów.</p>
+
+        <ul id="wyniki"></ul>
+    </main>
+
+    <script src="{% static 'gry/app.js' %}"></script>
+</body>
+</html>
